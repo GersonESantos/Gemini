@@ -78,16 +78,3 @@ button:hover {
 button:active {
     background-color: #004085;
 }
-.btn-google,
-.btn-github {
-    background-color: #f8f9fa; /* Fundo dos botões Google/Github */
-    color: #3c4043; /* Cor do texto dos botões Google/Github */
-    border: 1px solid #dadce0; /* Borda dos botões Google/Github */
-    margin-bottom: 15px;
-    font-weight: 500; /* Peso da fonte um pouco menor */
-}
-       .btn img {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
-        }
