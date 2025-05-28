@@ -1,29 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('loginForm');
+document.addEventListener('DOMContentLoaded', function () {
+    const passwordInput = document.getElementById('password');
+    const togglePasswordIcon = document.getElementById('togglePasswordIcon');
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+    if (passwordInput && togglePasswordIcon) {
+        const showPassword = () => {
+            passwordInput.type = 'text';
+        };
 
-            const usernameInput = document.getElementById('username');
-            const passwordInput = document.getElementById('password');
+        const hidePassword = () => {
+            passwordInput.type = 'password';
+        };
 
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value.trim();
+        // Eventos para mouse
+        togglePasswordIcon.addEventListener('mousedown', showPassword);
+        togglePasswordIcon.addEventListener('mouseup', hidePassword);
+        // Caso o mouse saia do ícone com o botão ainda pressionado
+        togglePasswordIcon.addEventListener('mouseleave', hidePassword);
 
-            if (username === "" || password === "") {
-                alert("Por favor, preencha todos os campos (usuário e senha).");
-                return;
-            }
-
-            console.log('Tentativa de login com:');
-            console.log('Usuário:', username);
-            // Nunca registre senhas em produção! Isto é apenas para demonstração.
-            console.log('Senha:', password);
-
-            alert('Formulário enviado! Verifique o console para mais detalhes (F12). Em um sistema real, os dados seriam enviados para um servidor.');
-            // Aqui você adicionaria a lógica de autenticação real,
-            // por exemplo, enviar os dados para um backend com fetch() ou XMLHttpRequest.
+        // Eventos para toque (dispositivos móveis)
+        togglePasswordIcon.addEventListener('touchstart', function(event) {
+            // Previne comportamentos padrão do toque (como scroll ou zoom)
+            // que podem interferir com a intenção de "segurar"
+            event.preventDefault(); 
+            showPassword();
         });
+        togglePasswordIcon.addEventListener('touchend', hidePassword);
+        // Caso o toque seja cancelado (ex: dedo desliza para fora da tela)
+        togglePasswordIcon.addEventListener('touchcancel', hidePassword);
+
+    } else {
+        console.warn('Elementos do toggle de senha não encontrados.');
     }
+
+    // Você pode adicionar o código de validação do formulário aqui, se necessário
+    // Exemplo: document.getElementById('loginForm').addEventListener('submit', function(event) { ... });
 });

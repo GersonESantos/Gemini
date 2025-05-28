@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; /* Um fundo neutro */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 360px;
+    text-align: center;
+}
+
+.login-image {
+    max-width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Opcional: se a imagem tiver cantos arredondados */
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Para incluir padding e border na largura total */
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+}
+.btn-google,
+.btn-github {
+    background-color: #686c6f; /* Fundo dos botões Google/Github */
+    color: #3c4043; /* Cor do texto dos botões Google/Github */
+    border: 1px solid #dadce0; /* Borda dos botões Google/Github */
+    margin-bottom: 15px;
+    font-weight: 500; /* Peso da fonte um pouco menor */
+}
+.btn img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
